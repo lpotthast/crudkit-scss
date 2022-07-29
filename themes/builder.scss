@@ -1,0 +1,66 @@
+@use "../../scss-reset/reset";
+@use "../../scss-grid/grid";
+
+@use "../helper";
+@use "../typography";
+@use "../alert";
+@use "../button";
+@use "../card";
+@use "../datetime";
+@use "../icon";
+@use "../instance";
+@use "../geometry";
+@use "../slider";
+@use "../select";
+@use "../tabs";
+@use "../toasts";
+@use "../toggle";
+@use "../pagination";
+@use "../progress_bar";
+@use "../quicksearch";
+@use "../nav";
+@use "../modal";
+@use "../tooltip";
+@use "../validation";
+@use "../licensing";
+@use "../input";
+@use "../field-label";
+@use "../field";
+@use "../table";
+@use "../tiptap_editor";
+@use "../image_gallery";
+
+@mixin build-theme($config) {
+  // TODO: Move outside as they are not depending on the given $config.
+  @include reset.produce;
+  @include helper.produce;
+  @include grid.produce;
+
+  @include typography.produce($config);
+  @include alert.produce($config);
+  @include button.produce($config);
+  @include card.produce($config);
+  @include datetime.produce($config);
+  @include icon.produce($config);
+  @include instance.produce($config);
+  @include geometry.produce($config);
+  @include slider.produce($config);
+  @include select.produce($config);
+  @include tabs.produce($config);
+  @include toasts.produce($config);
+  @include toggle.produce($config);
+  @include pagination.produce($config);
+  @include progress_bar.produce($config);
+  @include quicksearch.produce($config);
+  @include nav.produce($config);
+  @include modal.produce($config);
+  @include tooltip.produce($config);
+  @include validation.produce($config);
+  @include licensing.produce($config);
+  @include input.produce($config);
+  @include field-label.produce($config);
+  @include field.produce($config);
+  @include table.produce($config);
+  @include tiptap_editor.produce($config);
+  @include image_gallery.produce($config);
+}

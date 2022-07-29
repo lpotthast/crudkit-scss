@@ -1,0 +1,47 @@
+@use "sass:map";
+
+@mixin produce($config) {
+    $tabs: map.get($config, "component", "tabs");
+
+    $-selector-bg-color: map.get($tabs, "selector-bg-color");
+
+    .crud-tabs {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+
+        .crud-tab-selectors {
+            display: flex;
+            padding: 0 1em;
+
+            .crud-tab-selector {
+                padding: 1.2em;
+                margin-right: 0.5em;
+                background-color: #d3d3d3;
+                color: black;
+                font-weight: 400;
+                border-top-left-radius: 0.3em;
+                border-top-right-radius: 0.3em;
+                border-top: 1px solid transparent;
+                border-right: 1px solid transparent;
+                border-left: 1px solid transparent;
+                border-bottom: none;
+                user-select: none;
+                cursor: pointer;
+
+                &.active,
+                &:hover {
+                    background-color: white;
+                    border-color: #e3e3e3;
+                    box-shadow: 0px -3px 16px -14px #4a4a4a;
+                }
+            }
+        }
+
+        .crud-tab {
+            padding: 1.75em;
+            box-shadow: -2px 3px 15px -6px #666666;
+            background-color: white;
+            border-radius: 0.25em;
+        }
+    }
+}

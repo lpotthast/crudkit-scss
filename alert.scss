@@ -1,0 +1,96 @@
+@use "sass:map";
+
+$-border-darkener: 5%;
+$-text-darkener: 70%;
+$-vertical-padding: .8em;
+$-horizontal-padding: 1.2em;
+
+@mixin produce($config) {
+
+  .crud-alert {
+    width: 100%;
+    line-height: inherit;
+    margin: 0;
+    padding: $-vertical-padding $-horizontal-padding;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 0;
+
+    &.crud-alert-primary {
+      background-color: map.get($config, "color", "primary-light");
+      border-color: darken(map.get($config, "color", "primary-light"), $-border-darkener);
+      color: darken(map.get($config, "color", "primary-light"), $-text-darkener);
+    }
+
+    &.crud-alert-secondary {
+      background-color: map.get($config, "color", "secondary-light");
+      border-color: darken(map.get($config, "color", "secondary-light"), $-border-darkener);
+      color: darken(map.get($config, "color", "secondary-light"), $-text-darkener);
+    }
+
+    &.crud-alert-info {
+      background-color: map.get($config, "color", "info-light");
+      border-color: darken(map.get($config, "color", "info-light"), $-border-darkener);
+      color: darken(map.get($config, "color", "info-light"), $-text-darkener);
+    }
+
+    &.crud-alert-success {
+      background-color: map.get($config, "color", "success-light");
+      border-color: darken(map.get($config, "color", "success-light"), $-border-darkener);
+      color: darken(map.get($config, "color", "success-light"), $-text-darkener);
+    }
+
+    &.crud-alert-warning {
+      background-color: map.get($config, "color", "warning-light");
+      border-color: darken(map.get($config, "color", "warning-light"), $-border-darkener);
+      color: darken(map.get($config, "color", "warning-light"), $-text-darkener);
+    }
+
+    &.crud-alert-danger {
+      background-color: map.get($config, "color", "danger-light");
+      border-color: darken(map.get($config, "color", "danger-light"), $-border-darkener);
+      color: darken(map.get($config, "color", "danger-light"), $-text-darkener);
+    }
+
+    &.crud-alert-dismissible {
+      .close {
+        float: right;
+        padding: 0;
+        font-size: 1.5em;
+        font-weight: 700;
+        line-height: .9;
+        color: inherit;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .5;
+        background: 0 0;
+        border: 0;
+        -webkit-appearance: none;
+
+        &:hover {
+          color: black;
+          opacity: 0.75;
+        }
+      }
+
+      &::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+    }
+
+    .crud-alert-heading {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: .3em;
+    }
+
+  }
+
+  .crud-message {
+    .crud-alert {
+      margin-bottom: 0.5em;
+    }
+  }
+
+}
