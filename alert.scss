@@ -16,43 +16,43 @@ $-horizontal-padding: 1.2em;
     border: 1px solid lightgrey;
     border-radius: 0;
 
-    &.crud-alert-primary {
+    &.type-primary {
       background-color: map.get($config, "color", "primary-light");
       border-color: darken(map.get($config, "color", "primary-light"), $-border-darkener);
       color: darken(map.get($config, "color", "primary-light"), $-text-darkener);
     }
 
-    &.crud-alert-secondary {
+    &.type-secondary {
       background-color: map.get($config, "color", "secondary-light");
       border-color: darken(map.get($config, "color", "secondary-light"), $-border-darkener);
       color: darken(map.get($config, "color", "secondary-light"), $-text-darkener);
     }
 
-    &.crud-alert-info {
+    &.type-info {
       background-color: map.get($config, "color", "info-light");
       border-color: darken(map.get($config, "color", "info-light"), $-border-darkener);
       color: darken(map.get($config, "color", "info-light"), $-text-darkener);
     }
 
-    &.crud-alert-success {
+    &.type-success {
       background-color: map.get($config, "color", "success-light");
       border-color: darken(map.get($config, "color", "success-light"), $-border-darkener);
       color: darken(map.get($config, "color", "success-light"), $-text-darkener);
     }
 
-    &.crud-alert-warning {
+    &.type-warning {
       background-color: map.get($config, "color", "warning-light");
       border-color: darken(map.get($config, "color", "warning-light"), $-border-darkener);
       color: darken(map.get($config, "color", "warning-light"), $-text-darkener);
     }
 
-    &.crud-alert-danger {
+    &.type-danger {
       background-color: map.get($config, "color", "danger-light");
       border-color: darken(map.get($config, "color", "danger-light"), $-border-darkener);
       color: darken(map.get($config, "color", "danger-light"), $-text-darkener);
     }
 
-    &.crud-alert-dismissible {
+    &.dismissible {
       .close {
         float: right;
         padding: 0;
