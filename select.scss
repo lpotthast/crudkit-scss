@@ -48,6 +48,7 @@
             border: 1px solid;
             max-height: 8em;
             overflow-y: scroll;
+            z-index: 999;
             
             &.shown {
                 display: flex;
