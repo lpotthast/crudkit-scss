@@ -2,8 +2,8 @@
 
 @mixin produce($config) {
     $tabs: map.get($config, "component", "tabs");
-
-    $-selector-bg-color: map.get($tabs, "selector-bg-color");
+    $tab-selector: map.get($config, "component", "tab-selector");
+    $tab: map.get($config, "component", "tab");
 
     .crud-tabs {
         margin-top: 1.5em;
@@ -16,8 +16,8 @@
             .crud-tab-selector {
                 padding: 1.2em;
                 margin-right: 0.5em;
-                background-color: #d3d3d3;
-                color: black;
+                background-color: map.get($tab-selector, "background-color");
+                color: map.get($tab-selector, "text-color");
                 font-weight: 400;
                 border-top-left-radius: 0.3em;
                 border-top-right-radius: 0.3em;
@@ -30,17 +30,17 @@
 
                 &.active,
                 &:hover {
-                    background-color: white;
-                    border-color: #e3e3e3;
-                    box-shadow: 0px -3px 16px -14px #4a4a4a;
+                    background-color: map.get($tab-selector, "active-background-color");
+                    border-color: map.get($tab-selector, "active-border-color");
+                    box-shadow: 0px -3px 16px -14px map.get($tab-selector, "active-box-shadow-color");
                 }
             }
         }
 
         .crud-tab {
             padding: 1.75em;
-            box-shadow: -2px 3px 15px -6px #666666;
-            background-color: white;
+            background-color: map.get($tab, "background-color");
+            box-shadow: -2px 3px 15px -6px map.get($tab, "box-shadow-color");
             border-radius: 0.25em;
         }
     }

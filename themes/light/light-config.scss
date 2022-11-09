@@ -132,6 +132,9 @@ $components: (
         btn-danger-border-color-hover: darken($-danger-dim, $-darker-2),
         btn-danger-box-shadow-color: rgba($-danger-dim, $-btn-box-shadow-opacity),
     ),
+    table-wrapper: (
+        box-shadow-color: #666666,
+    ),
     table: (
         color: $-std-text-dark,
         background-color: white,
@@ -144,8 +147,25 @@ $components: (
         header-cell-padding: 0.75em 1em,
         body-cell-padding: 0.75em 1em
     ),
+    table-row: (
+        border-bottom-color: lightgrey,
+    ),
     tabs: (
-        selector-bg-color: #d0d0d0,
+    ),
+    tab-selector: (
+        background-color: #d3d3d3,
+        text-color: black,
+        active-background-color: white,
+        active-border-color: #e3e3e3,
+        active-box-shadow-color: #4a4a4a,
+    ),
+    tab: (
+        background-color: white,
+        box-shadow-color: #666666,
+    ),
+    card: (
+        background-color: white,
+        box-shadow-color: #666666,
     ),
     modal: (
         color: $-std-text-dark,
