@@ -6,6 +6,7 @@
 @use "../alert";
 @use "../button";
 @use "../card";
+@use "../checkbox";
 @use "../datetime";
 @use "../icon";
 @use "../instance";
@@ -40,6 +41,7 @@
   @include alert.produce($config);
   @include button.produce($config);
   @include card.produce($config);
+  @include checkbox.produce($config);
   @include datetime.produce($config);
   @include icon.produce($config);
   @include instance.produce($config);

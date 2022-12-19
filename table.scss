@@ -70,6 +70,13 @@
           visibility: visible;
         }
       }
+
+      &.select {
+        vertical-align: top;
+        padding-left: 1.25em;
+        padding-right: 0.25em;
+        padding-top: 1em;
+      }
     }
 
     td {
@@ -85,6 +92,13 @@
             visibility: visible;
           }
         }
+      }
+
+      &.select {
+        vertical-align: top;
+        padding-left: 1.25em;
+        padding-right: 0.25em;
+        padding-top: 0.9em;
       }
     }
 
