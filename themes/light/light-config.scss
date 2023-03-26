@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:color";
 
 $-grey-0: #F8F8F8;
 $-grey-1: #ECECEB;
@@ -10,24 +11,12 @@ $-grey-6: #212121;
 $-std-text-bright: #f0f0f0;
 $-std-text-dark: #1d1d1d;
 $-default-color: #e2e2e2;
-$-primary-light: #cce5ff;
-$-primary-dim: #0275d8;
-$-primary-bright: #007bff;
-$-secondary-light: #e7e7e7;
-$-secondary-dim: #f0f0f0;
-$-secondary-bright: #ffffff;
-$-info-light: #d1ecf1;
-$-info-dim: #d9edf7;
-$-info-bright: #d9edf7;
-$-success-light: #d4edda;
-$-success-dim: #469a46;
-$-success-bright: #26ae46;
-$-warning-light: #fff3cd;
-$-warning-dim: #f0ad4e;
-$-warning-bright: #ffc107;
-$-danger-light: #f8d7da;
-$-danger-dim: #d9534f;
-$-danger-bright: #dc3545;
+
+$-primary: #0275d8;
+$-info: #0275d8;
+$-success: #43b543;
+$-warn: rgb(251, 140, 0);
+$-danger: #d9534f;
 
 $colors: (
     grey-0: $-grey-0,
@@ -40,24 +29,11 @@ $colors: (
     std-text-bright: $-std-text-bright,
     std-text-dark: $-std-text-dark,
     default-color: $-default-color,
-    primary-light: $-primary-light,
-    primary-dim: $-primary-dim,
-    primary-bright: $-primary-bright,
-    secondary-light: $-secondary-light,
-    secondary-dim: $-secondary-dim,
-    secondary-bright: $-secondary-bright,
-    info-light: $-info-light,
-    info-dim: $-info-dim,
-    info-bright: $-info-bright,
-    success-light: $-success-light,
-    success-dim: $-success-dim,
-    success-bright: $-success-bright,
-    warning-light: $-warning-light,
-    warning-dim: $-warning-dim,
-    warning-bright: $-warning-bright,
-    danger-light: $-danger-light,
-    danger-dim: $-danger-dim,
-    danger-bright: $-danger-bright
+    primary: $-primary,
+    info: $-info,
+    success: $-success,
+    warn: $-warn,
+    danger: $-danger,
 );
 
 $-darker-1: 5%;
@@ -93,8 +69,22 @@ $-input-inverted-bg-color: $-std-text-dark;
 $-input-padding: 0.5em 2em 0.5em 0;
 
 $components: (
+    alert: (
+        vertical-padding: .8em,
+        horizontal-padding: 1.2em,
+        primary-background-color: $-primary,
+        primary-color: white,
+        info-background-color: $-info,
+        info-color: white,
+        success-background-color: $-success,
+        success-color: white,
+        warn-background-color: $-warn,
+        warn-color: white,
+        danger-background-color: $-danger,
+        danger-color: white,
+    ),
     button: (
-        box-shadow-color: $-primary-bright,
+        box-shadow-color: lighten($-primary, 10%),
         box-shadow-opacity: $-btn-box-shadow-opacity,
         btn-default-text-color: $-std-text-dark,
         btn-default-text-color-hover: $-std-text-dark,
@@ -105,32 +95,32 @@ $components: (
         btn-default-box-shadow-color: rgba($-default-color, $-btn-box-shadow-opacity),
         btn-primary-text-color: $-std-text-bright,
         btn-primary-text-color-hover: $-std-text-bright,
-        btn-primary-background-color: $-primary-dim,
-        btn-primary-background-color-hover: darken($-primary-dim, $-darker-1),
-        btn-primary-border-color: $-primary-dim,
-        btn-primary-border-color-hover: darken($-primary-dim, $-darker-2),
-        btn-primary-box-shadow-color: rgba($-primary-dim, $-btn-box-shadow-opacity),
+        btn-primary-background-color: $-primary,
+        btn-primary-background-color-hover: darken($-primary, $-darker-1),
+        btn-primary-border-color: $-primary,
+        btn-primary-border-color-hover: darken($-primary, $-darker-2),
+        btn-primary-box-shadow-color: rgba($-primary, $-btn-box-shadow-opacity),
         btn-success-text-color: $-std-text-bright,
         btn-success-text-color-hover: $-std-text-bright,
-        btn-success-background-color: $-success-dim,
-        btn-success-background-color-hover: darken($-success-dim, $-darker-1),
-        btn-success-border-color: $-success-dim,
-        btn-success-border-color-hover: darken($-success-dim, $-darker-2),
-        btn-success-box-shadow-color: rgba($-success-dim, $-btn-box-shadow-opacity),
+        btn-success-background-color: $-success,
+        btn-success-background-color-hover: darken($-success, $-darker-1),
+        btn-success-border-color: $-success,
+        btn-success-border-color-hover: darken($-success, $-darker-2),
+        btn-success-box-shadow-color: rgba($-success, $-btn-box-shadow-opacity),
         btn-warning-text-color: $-std-text-bright,
         btn-warning-text-color-hover: $-std-text-bright,
-        btn-warning-background-color: $-warning-dim,
-        btn-warning-background-color-hover: darken($-warning-dim, $-darker-1),
-        btn-warning-border-color: $-warning-dim,
-        btn-warning-border-color-hover: darken($-warning-dim, $-darker-2),
-        btn-warning-box-shadow-color: rgba($-warning-dim, $-btn-box-shadow-opacity),
+        btn-warning-background-color: $-warn,
+        btn-warning-background-color-hover: darken($-warn, $-darker-1),
+        btn-warning-border-color: $-warn,
+        btn-warning-border-color-hover: darken($-warn, $-darker-2),
+        btn-warning-box-shadow-color: rgba($-warn, $-btn-box-shadow-opacity),
         btn-danger-text-color: $-std-text-bright,
         btn-danger-text-color-hover: $-std-text-bright,
-        btn-danger-background-color: $-danger-dim,
-        btn-danger-background-color-hover: darken($-danger-dim, $-darker-1),
-        btn-danger-border-color: $-danger-dim,
-        btn-danger-border-color-hover: darken($-danger-dim, $-darker-2),
-        btn-danger-box-shadow-color: rgba($-danger-dim, $-btn-box-shadow-opacity),
+        btn-danger-background-color: $-danger,
+        btn-danger-background-color-hover: darken($-danger, $-darker-1),
+        btn-danger-border-color: $-danger,
+        btn-danger-border-color-hover: darken($-danger, $-darker-2),
+        btn-danger-box-shadow-color: rgba($-danger, $-btn-box-shadow-opacity),
     ),
     table-wrapper: (
         box-shadow-color: #666666,
@@ -207,7 +197,7 @@ $components: (
         search-color: $-std-text-dark,
         search-background-color: darken($-input-bg-color, 20%),
         no-items-color: white,
-        no-items-background-color: darken($-danger-light, $-darker-3),
+        no-items-background-color: lighten($-danger, 20%),
         item-color: $-std-text-dark,
         item-background-color: $-input-bg-color,
         item-padding: $-input-padding,

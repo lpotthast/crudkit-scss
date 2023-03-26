@@ -1,55 +1,41 @@
 @use "sass:map";
 
-$-border-darkener: 5%;
-$-text-darkener: 70%;
-$-vertical-padding: .8em;
-$-horizontal-padding: 1.2em;
-
 @mixin produce($config) {
+  $alert: map.get($config, "component", "alert");
 
-  .crud-alert {
+  .alert {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
     line-height: inherit;
-    margin: 0;
-    padding: $-vertical-padding $-horizontal-padding;
-    background-color: white;
-    border: 1px solid lightgrey;
-    border-radius: 0;
+    margin: 0.5em;
+    padding: map.get($alert, "vertical-padding") map.get($alert, "horizontal-padding");
+    border: none;
+    border-radius: 0.5em;
 
-    &.type-primary {
-      background-color: map.get($config, "color", "primary-light");
-      border-color: darken(map.get($config, "color", "primary-light"), $-border-darkener);
-      color: darken(map.get($config, "color", "primary-light"), $-text-darkener);
+    &.centered {
+      align-items: center;
     }
 
-    &.type-secondary {
-      background-color: map.get($config, "color", "secondary-light");
-      border-color: darken(map.get($config, "color", "secondary-light"), $-border-darkener);
-      color: darken(map.get($config, "color", "secondary-light"), $-text-darkener);
+    &.info {
+      color: map.get($alert, "info-color");
+      background-color: map.get($alert, "info-background-color");
     }
 
-    &.type-info {
-      background-color: map.get($config, "color", "info-light");
-      border-color: darken(map.get($config, "color", "info-light"), $-border-darkener);
-      color: darken(map.get($config, "color", "info-light"), $-text-darkener);
+    &.success {
+      color: map.get($alert, "success-color");
+      background-color: map.get($alert, "success-background-color");
     }
 
-    &.type-success {
-      background-color: map.get($config, "color", "success-light");
-      border-color: darken(map.get($config, "color", "success-light"), $-border-darkener);
-      color: darken(map.get($config, "color", "success-light"), $-text-darkener);
+    &.warn {
+      color: map.get($alert, "warn-color");
+      background-color: map.get($alert, "warn-background-color");
     }
 
-    &.type-warning {
-      background-color: map.get($config, "color", "warning-light");
-      border-color: darken(map.get($config, "color", "warning-light"), $-border-darkener);
-      color: darken(map.get($config, "color", "warning-light"), $-text-darkener);
-    }
-
-    &.type-danger {
-      background-color: map.get($config, "color", "danger-light");
-      border-color: darken(map.get($config, "color", "danger-light"), $-border-darkener);
-      color: darken(map.get($config, "color", "danger-light"), $-text-darkener);
+    &.danger {
+      color: map.get($alert, "danger-color");
+      background-color: map.get($alert, "danger-background-color");
     }
 
     &.dismissible {
@@ -58,13 +44,13 @@ $-horizontal-padding: 1.2em;
         padding: 0;
         font-size: 1.5em;
         font-weight: 700;
-        line-height: .9;
+        line-height: 0.9;
         color: inherit;
         text-shadow: 0 1px 0 #fff;
-        opacity: .5;
+        opacity: 0.5;
         background: 0 0;
         border: 0;
-        -webkit-appearance: none;
+        appearance: none;
 
         &:hover {
           color: black;
@@ -79,18 +65,10 @@ $-horizontal-padding: 1.2em;
       }
     }
 
-    .crud-alert-heading {
-      font-size: 1.1em;
+    .title {
+      font-size: 1.2em;
       font-weight: bold;
-      margin-bottom: .3em;
-    }
-
-  }
-
-  .crud-message {
-    .crud-alert {
-      margin-bottom: 0.5em;
+      margin-bottom: 0.3em;
     }
   }
-
 }

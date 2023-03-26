@@ -1,5 +1,7 @@
-@use "../../../scss/scss-reset/reset";
-@use "../../../scss/scss-grid/grid";
+//@use "../../../scss/scss-reset/reset";
+//@use "../../../scss/scss-grid/grid";
+
+@use "../reset";
 
 @use "../components/helper";
 @use "../components/typography";
@@ -7,6 +9,7 @@
 @use "../components/button";
 @use "../components/card";
 @use "../components/checkbox";
+@use "../components/collapsible";
 @use "../components/datetime";
 @use "../components/icon";
 @use "../components/instance";
@@ -35,13 +38,14 @@
   // TODO: Move outside as they are not depending on the given $config.
   @include reset.produce;
   @include helper.produce;
-  @include grid.produce;
+  //@include grid.produce;
 
   @include typography.produce($config);
   @include alert.produce($config);
   @include button.produce($config);
   @include card.produce($config);
   @include checkbox.produce($config);
+  @include collapsible.produce($config);
   @include datetime.produce($config);
   @include icon.produce($config);
   @include instance.produce($config);

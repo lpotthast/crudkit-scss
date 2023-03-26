@@ -12,7 +12,7 @@
 
   .crud-not-licensed-warning {
     display: block;
-    background-color: darken(map.get($config, "color", "warning-dim"), (map.get($config, "color-shift", "darker-3")));
+    background-color: darken(map.get($config, "color", "warn"), (map.get($config, "color-shift", "darker-3")));
     color: white;
     margin-bottom: map.get($config, "component", "instance", "collapsible-body-content-margin");
   }
