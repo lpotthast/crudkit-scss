@@ -204,15 +204,6 @@ $components: (
         item-hover-background-color: darken($-input-bg-color, 20%),
         item-selected-background-color: darken($-input-bg-color, 30%)
     ),
-    tiptap-editor: (
-        btn-color: $-std-text-dark,
-        btn-background-color: #dfdfdf,
-        active-btn-color: white,
-        active-btn-background-color: $-std-text-dark,
-        instance-color: $-std-text-dark,
-        instance-background-color: $-input-bg-color,
-        border-color: #c9c9c9
-    ),
     datetime: (
         font-size: 1em, // otherwise input font size
         brand-color: #FF5711,

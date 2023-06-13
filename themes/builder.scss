@@ -31,7 +31,6 @@
 @use "../components/field-label";
 @use "../components/field";
 @use "../components/table";
-@use "../components/tiptap_editor";
 @use "../components/image_gallery";
 
 @mixin build-theme($config) {
@@ -67,6 +66,5 @@
   @include field-label.produce($config);
   @include field.produce($config);
   @include table.produce($config);
-  @include tiptap_editor.produce($config);
   @include image_gallery.produce($config);
 }
